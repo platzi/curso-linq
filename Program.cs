@@ -17,8 +17,13 @@
 
 
 //Libros de python
-ImprimirValores(queries.LibrosdePython());
+//ImprimirValores(queries.LibrosdePython());
 
+//libros de Java ordenados por nombre
+//ImprimirValores(queries.LibrosdeJavaPorNombreAscendente());
+
+//libros que tienen mas de 450 paginas ordernados por cantidad de paginas
+ImprimirValores(queries.Librosmasde450pagOrdernadorPorNumPagDescendente());
 
 void ImprimirValores(IEnumerable<Book> listadelibros)
 {
