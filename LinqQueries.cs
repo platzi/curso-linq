@@ -44,4 +44,9 @@ public class LinqQueries
     {
         return librosCollection.Any(p=> p.PublishedDate.Year == 2005);
     }
+
+    public IEnumerable<Book> LibrosdePython()
+    {
+        return librosCollection.Where(p=> p.Categories.Contains("Python"));
+    }
 }
