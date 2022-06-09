@@ -41,8 +41,15 @@
 //Console.WriteLine($"Fecha de publicacion menor: {queries.FechaDePublicacionMenor()}");
 
 //Numero de paginas del libro con mayor Numero de paginas
-Console.WriteLine($"El libro con mayor numero de paginas tiene: {queries.NumeroDePagLibroMayor()} paginas. ");
+//Console.WriteLine($"El libro con mayor numero de paginas tiene: {queries.NumeroDePagLibroMayor()} paginas. ");
 
+//Libro con menor numero de paginas
+//var libroMenorPag = queries.LibroConMenorNumeroDePaginas();
+//Console.WriteLine($"{libroMenorPag.Title} - {libroMenorPag.PageCount}");
+
+//Libro con fecha publicacion mas reciente
+var libroFechaPubReciente = queries.LibroConFechaPublicacionMasReciente();
+Console.WriteLine($"{libroFechaPubReciente.Title} - {libroFechaPubReciente.PublishedDate.ToShortDateString()}");
 
 void ImprimirValores(IEnumerable<Book> listadelibros)
 {
