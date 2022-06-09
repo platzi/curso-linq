@@ -61,8 +61,11 @@
 //Console.WriteLine($"promedio caracteres de los titulos: {queries.PromedioCaracteresTitulo()}");
 
 //Libros publicados a partir del 2000 agrupados por ano
-ImprimirGrupo(queries.LibrosDespuesdel2000AgrupadosporAno());
+//ImprimirGrupo(queries.LibrosDespuesdel2000AgrupadosporAno());
 
+//Diccionario de libros agrupados por primera letra del titulo
+var diccionarioLookup = queries.DiccionariosDeLibrosPorLetra();
+ImprimirDiccionario(diccionarioLookup, 'Z');
 
 void ImprimirValores(IEnumerable<Book> listadelibros)
 {
@@ -85,4 +88,13 @@ void ImprimirGrupo(IEnumerable<IGrouping<int,Book>> ListadeLibros)
             Console.WriteLine("{0,-60} {1, 15} {2, 15}",item.Title,item.PageCount,item.PublishedDate.Date.ToShortDateString()); 
         }
     }
+}
+
+void ImprimirDiccionario(ILookup<char, Book> ListadeLibros, char letra)
+{
+   Console.WriteLine("{0,-60} {1, 15} {2, 15}\n", "Titulo", "N. Paginas", "Fecha publicacion");
+   foreach(var item in ListadeLibros[letra])
+   {
+         Console.WriteLine("{0,-60} {1, 15} {2, 15}",item.Title,item.PageCount,item.PublishedDate.Date.ToShortDateString()); 
+   }
 }
