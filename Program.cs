@@ -35,7 +35,14 @@
 //ImprimirValores(queries.TresPrimeroLibrosDeLaCollecion());
 
 //cantidad de libros que tienen entre 200 y 500 paginas
-Console.WriteLine($"Cantidad de libros que tiene entre 200 y 500 pag. {queries.CantidadDeLibrosEntre200y500Pag()}");
+//Console.WriteLine($"Cantidad de libros que tiene entre 200 y 500 pag. {queries.CantidadDeLibrosEntre200y500Pag()}");
+
+// fecha de publicacion menor de todos los libros
+//Console.WriteLine($"Fecha de publicacion menor: {queries.FechaDePublicacionMenor()}");
+
+//Numero de paginas del libro con mayor Numero de paginas
+Console.WriteLine($"El libro con mayor numero de paginas tiene: {queries.NumeroDePagLibroMayor()} paginas. ");
+
 
 void ImprimirValores(IEnumerable<Book> listadelibros)
 {
