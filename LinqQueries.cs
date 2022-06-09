@@ -141,4 +141,13 @@ public class LinqQueries
     {
         return librosCollection.ToLookup(p=> p.Title[0], p=> p);
     }
+
+    public IEnumerable<Book> LibrosDespuesdel2005conmasde500Pags()
+    {
+        var LibrosDepuesdel2005 = librosCollection.Where(p=> p.PublishedDate.Year > 2005);
+
+        var LibrosConMasde500pag = librosCollection.Where(p=> p.PageCount > 500);
+
+        return LibrosDepuesdel2005.Join(LibrosConMasde500pag, p=> p.Title, x=> x.Title, (p, x) => p);
+    }
 }
